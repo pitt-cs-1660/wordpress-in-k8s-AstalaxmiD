@@ -110,6 +110,7 @@ spec:
       - name: webpage
         persistentVolumeClaim:
           claimName: wp-pv-claim
+        
 
 ---
 ##
@@ -119,10 +120,11 @@ spec:
 # accessModes: ReadWriteOnce
 ##
 apiVersion: v1
-kind: persistentVolumeClaim
+kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
 spec:
+  storageClassName: standard
   accessModes:
   - ReadWriteOnce
   resources:
